@@ -1,0 +1,5 @@
+package: github.com/rprobotics/rprobotics
+import:
+  - package: gobot.io/x/gobot
+  - package: github.com/nsf/gocode
+  - package: github.com/owenwaller/piglow

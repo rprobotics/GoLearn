@@ -2,7 +2,11 @@
 
 default:
   cmds:
-    - /home/turbo/bin/go run main.go
+    - /home/turbo/bin/go build -o golearn main.go 
+  env:
+    GOOS: linux
+    GOARCH: arm
+    
 
 
 deps:
@@ -10,4 +14,11 @@ deps:
     - /usr/bin/glide up
   env: 
     PATH: /home/turbo/bin/
-    GOPATH: /home/turbo/go
+    GOPATH: /opt/go
+
+upload:
+  deps:
+    - default
+  cmds:
+    - scp golearn pi@192.168.1.103:~/golearn
+    - ssh pi@192.168.1.103 "/home/pi/golearn"
