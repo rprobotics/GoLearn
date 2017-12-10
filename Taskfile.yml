@@ -2,4 +2,12 @@
 
 default:
   cmds:
-    - echo "Hello, World!"
+    - /home/turbo/bin/go run main.go
+
+
+deps:
+  cmds:
+    - /usr/bin/glide up
+  env: 
+    PATH: /home/turbo/bin/
+    GOPATH: /home/turbo/go
